@@ -10,6 +10,12 @@ screenHeight = 0
 maxScore = 10
 cx = 0
 cy = 0
+joyUp=0
+joyDown=2
+
+#Joystick constants
+#Up: 13
+#Down: 14
 
 def initialize():
     global cx

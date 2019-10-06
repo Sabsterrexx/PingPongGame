@@ -1,5 +1,6 @@
 #Import required Modules:
 import pygame
+from pygame import joystick
 import constants
 from paddle import Paddle
 from ball import Ball
@@ -56,6 +57,17 @@ def init():
     #Creating the end game screen's text
     endScreen_text = Text(screen)
     endScreen_text.text = "Game Over. Press 'P' to play again"
-
+   
+    initJoysticks()
 
     return ScreenState(screen, title_text, endScreen_text, paddle1, paddle2, ball, paddle1Score, paddle2Score, clock, FPS)
+
+
+def initJoysticks():
+    for x in range (joystick.get_count()):
+        j = joystick.Joystick(x)
+        j.init()
+        txt = "Enabled joystick: " + j.get_name()
+        print(txt)
+    if not joystick.get_count():
+        print("No Joysticks to Initialize")

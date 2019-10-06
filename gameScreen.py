@@ -63,6 +63,26 @@ def processKeyboardInput(screenState: ScreenState):
                 screenState.paddle2.dy = -screenState.paddle2.speed
             elif event.key == pygame.K_DOWN:
                 screenState.paddle2.dy = screenState.paddle2.speed
+                
+        elif event.type == pygame.JOYBUTTONDOWN:
+            if event.joy == 0:
+                if event.button == constants.joyDown:
+                    screenState.paddle1.dy = -screenState.paddle1.speed
+                elif event.button == constants.joyUp:
+                    screenState.paddle1.dy = screenState.paddle1.speed
+            else:
+                 if event.button == constants.joyDown:
+                    screenState.paddle2.dy = -screenState.paddle2.speed
+                 elif event.button == constants.joyUp:
+                    screenState.paddle2.dy = screenState.paddle2.speed           
+            
+        elif event.type == pygame.JOYBUTTONUP:
+            if event.joy == 0:
+                screenState.paddle1.dy = 0
+            else:
+                screenState.paddle2.dy = 0
+                
+                
         #Key up event listeners:      
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
