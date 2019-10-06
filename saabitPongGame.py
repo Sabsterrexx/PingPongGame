@@ -6,6 +6,7 @@
 #Difficulty levels (ball changes speed, ball and paddles get smaller)
 #Ball changing color upon collision with paddle(s)
 
+
 #Import all the required screen modules into the main file:
 from screenState import ScreenState
 import initGame
