@@ -30,11 +30,11 @@ def init():
 
     #Making 2 paddles:
     paddle1 = Paddle()
-    paddle1.x = 10
+    paddle1.x = paddle1.width
     paddle1.color = constants.colors["BLUE"]
 
     paddle2 = Paddle()
-    paddle2.x = 780
+    paddle2.x = constants.screenWidth - paddle2.width
     paddle2.color = constants.colors["RED"]
 
 
@@ -50,6 +50,7 @@ def init():
 
     #Creating the title screen's text:
     title_text = Text(screen)
+    title_text.x = 10
     title_text.text = "Welcome to Saabit Pong Game. Difficulty keys: Easy: 1, Medium: 2, Hard: 3"
 
     #Creating the end game screen's text

@@ -8,7 +8,7 @@ class Text:
         self.font = "arial"
         self.x = 40
         self.y = 300
-        self.size = 25
+        self.size = 18
         self.text = " "
         self.color = constants.colors["BLUE"]
         self.dx = 2
