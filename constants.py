@@ -2,7 +2,7 @@
 
 import pygame
 
-#Declaring all the constants in one file
+#Declaring all the constants in one file that will be used throughout the program
 
 #Making a dictionary of all the possible colors, where each key represents a string which spells a color and its value it's RGB representation in a tuple 
 colors = {"WHITE": (255,255,255), "GREEN": (0,255,0), "RED": (255,0,0), "BLUE": (0,0,255),"BLACK": (0,0,0), "PURPLE": (128,0,128)}
@@ -17,12 +17,15 @@ joyUp = 0
 joyDown = 2
 
 
+#This function initializes the variables that will be used by the end, start and playing screens
 
 def initialize():
+    #I had to use the 'global' keyword because python could not tell whether I was creating new variables wiht a local scope or changing the values of pre-declared global variables
     global cx
     global cy
     global screenWidth
     global screenHeight
+    
     pygame.init()
     screenSize = (800,600)
     screen = pygame.display.set_mode((screenSize),0)
