@@ -58,16 +58,21 @@ def init():
     endScreen_text = Text(screen)
     endScreen_text.text = "Game Over. Press 'P' to play again"
    
+   #function if the joysticks are connected to pygame
     initJoysticks()
 
+    #returns the new object instance of the ScreenState class
     return ScreenState(screen, title_text, endScreen_text, paddle1, paddle2, ball, paddle1Score, paddle2Score, clock, FPS)
 
 
+#function to check if the joysticks are initialized
 def initJoysticks():
     for x in range (joystick.get_count()):
         j = joystick.Joystick(x)
         j.init()
+        #print the name of every joystick pygame is able to detect in the terminal
         txt = "Enabled joystick: " + j.get_name()
         print(txt)
+    #if no joysticks are detected, print "no joysticks to initialize" in the terminal   
     if not joystick.get_count():
         print("No Joysticks to Initialize")

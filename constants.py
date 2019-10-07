@@ -4,18 +4,19 @@ import pygame
 
 #Declaring all the constants in one file
 
+#Making a dictionary of all the possible colors, where each key represents a string which spells a color and its value it's RGB representation in a tuple 
 colors = {"WHITE": (255,255,255), "GREEN": (0,255,0), "RED": (255,0,0), "BLUE": (0,0,255),"BLACK": (0,0,0), "PURPLE": (128,0,128)}
 screenWidth = 0
 screenHeight = 0
 maxScore = 10
 cx = 0
 cy = 0
-joyUp=0
-joyDown=2
 
-#Joystick constants
-#Up: 13
-#Down: 14
+#variables used to identify the shape's buttons keycodes for the PS3 contorllers 
+joyUp = 0
+joyDown = 2
+
+
 
 def initialize():
     global cx

@@ -8,6 +8,7 @@ from screenState import ScreenState
 #This function is designed to generate the game's end screen
 def show(screenState: ScreenState):
 
+    #end screen loop
     end_game = True
         
     while end_game:
@@ -18,10 +19,12 @@ def show(screenState: ScreenState):
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.KEYDOWN:
+                #checking if the key 'p' is pressed to play again
                 if event.key == pygame.K_p:
                     end_game = False
                     return
  
+        #erasing the screen everytime
         screenState.screen.fill(constants.colors["WHITE"])
 
         #Setting the text to the screen:
@@ -34,4 +37,5 @@ def show(screenState: ScreenState):
         screenState.paddle1Score.write()
         screenState.paddle2Score.write()
 
+        #updating the screen
         pygame.display.update()

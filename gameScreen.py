@@ -10,9 +10,10 @@ from screenState import ScreenState
 
 def show(screenState: ScreenState):
         
-    #Main Drawing Loop
+    #Main Drawing Loop for the game screen
     while True:  
 
+        #function to check which key on the keyboard is pressed:
         processKeyboardInput(screenState)
 
         #controlling the speed of the loop:
@@ -55,35 +56,41 @@ def processKeyboardInput(screenState: ScreenState):
             sys.exit()
         #Key down event listeners:
         if event.type == pygame.KEYDOWN:
+            #Paddle 1's movement
             if event.key == pygame.K_w:
                 screenState.paddle1.dy = -screenState.paddle1.speed
             elif event.key == pygame.K_s:
                 screenState.paddle1.dy = screenState.paddle1.speed
+            #Paddle 2's movement    
             elif event.key == pygame.K_UP:
                 screenState.paddle2.dy = -screenState.paddle2.speed
             elif event.key == pygame.K_DOWN:
                 screenState.paddle2.dy = screenState.paddle2.speed
-                
+        #Key down event listeners for the joystick        
         elif event.type == pygame.JOYBUTTONDOWN:
+            #Checking if the 1st joystick is pressed
             if event.joy == 0:
                 if event.button == constants.joyDown:
                     screenState.paddle1.dy = -screenState.paddle1.speed
                 elif event.button == constants.joyUp:
                     screenState.paddle1.dy = screenState.paddle1.speed
+            #Checking if the 2nd joystick is pressed
             else:
                  if event.button == constants.joyDown:
                     screenState.paddle2.dy = -screenState.paddle2.speed
                  elif event.button == constants.joyUp:
                     screenState.paddle2.dy = screenState.paddle2.speed           
-            
+        #Key up event listeners for the joysticks            
         elif event.type == pygame.JOYBUTTONUP:
             if event.joy == 0:
+                #making the 1st paddle stop moving
                 screenState.paddle1.dy = 0
             else:
+                #making the 2nd paddle stop moving
                 screenState.paddle2.dy = 0
                 
                 
-        #Key up event listeners:      
+        #Key up event listeners for keyboard:      
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
                 screenState.paddle2.dy = 0

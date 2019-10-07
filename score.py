@@ -7,6 +7,7 @@ import pygame
 
 class Score:
     def __init__(self, screen):
+        #attributes for the coordinates, color, text, etc.
         self.font = "arial"
         self.x = 500
         self.y = 500
@@ -21,8 +22,8 @@ class Score:
         self.rendertitle = self.fonttitle.render(self.text,True,self.color)
         self.screen = screen
 
-    #write to screen function:
 
+    #write to screen function:
     def write(self):
         int(self.score)
         self.text = "Score: " + str(self.score)

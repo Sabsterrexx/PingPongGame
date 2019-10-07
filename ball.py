@@ -2,12 +2,14 @@ import constants
 import pygame
 import random
 
+#initializing all the constants
 screen = constants.initialize()
 
 #Ball class:
 
 class Ball:
     def __init__(self):
+        #ball attributes needed for drawing the ball such al the color, the speed and the co-ordinates, etc.
         self.x = constants.cx        
         self.y = constants.cy
         self.color = constants.colors["PURPLE"]
