@@ -7,7 +7,7 @@ from screenState import ScreenState
 
 #This function is designed to generate the game's end screen
 def show(screenState: ScreenState):
-    
+
     end_game = True
         
     while end_game:
@@ -29,5 +29,9 @@ def show(screenState: ScreenState):
         screenState.endScreen_text.x = 200
         screenState.endScreen_text.y = 300
         screenState.endScreen_text.write()
+
+        #Write score(s):
+        screenState.paddle1Score.write()
+        screenState.paddle2Score.write()
 
         pygame.display.update()
